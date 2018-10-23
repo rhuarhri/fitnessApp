@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".choiceActivity">
+
+    <TextView
+        android:id="@+id/TimeTitleTXT"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Time"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TimeTXT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="0"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/ExercisesTXT"
+        app:layout_constraintStart_toStartOf="@+id/TimeTitleTXT"
+        app:layout_constraintTop_toBottomOf="@+id/TimeTitleTXT" />
+
+    <TextView
+        android:id="@+id/ExercisesTtileTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Exercises"
+        android:textColor="#fff"
+        app:layout_constraintStart_toEndOf="@+id/TimeTitleTXT"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ExercisesTXT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="0"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/TitleTXT"
+        app:layout_constraintStart_toStartOf="@+id/ExercisesTtileTXT"
+        app:layout_constraintTop_toBottomOf="@+id/ExercisesTtileTXT" />
+
+    <TextView
+        android:id="@+id/TitleTXT"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:text="Choose Exercise"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ExercisesTXT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ExercisesTtileTXT"
+        app:layout_constraintTop_toTopOf="@+id/ExercisesTtileTXT" />
+
+    <Button
+        android:id="@+id/StartBTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorSecond"
+        android:text="Start"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="368dp"
+        android:layout_height="452dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="59dp" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".trainingReviewActivity">
+
+    <TextView
+        android:id="@+id/CaloriesTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="0 Cal"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/heartRateTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 DPM"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="471dp" />
+
+    <TextView
+        android:id="@+id/resultsTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Results"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/heartRateTXT"
+        app:layout_constraintStart_toStartOf="@+id/heartRateTXT" />
+
+    <Button
+        android:id="@+id/homeBTN"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toEndOf="@+id/heartRateTXT" />
+
+    <Button
+        android:id="@+id/statsBTN"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="8dp"
+        android:text="stats"
+        app:layout_constraintBottom_toTopOf="@+id/homeBTN"
+        app:layout_constraintStart_toStartOf="@+id/homeBTN" />
+</android.support.constraint.ConstraintLayout>
