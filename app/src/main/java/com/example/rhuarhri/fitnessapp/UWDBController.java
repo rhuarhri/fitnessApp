@@ -11,7 +11,7 @@ public class UWDBController {
        should be store.
      */
 
-    UserWeightDB db;
+    private UserWeightDB db;
 
     UWDBController(Context context)
     {
@@ -33,7 +33,7 @@ public class UWDBController {
 
     }
 
-    boolean IsDatabaseEmpty()
+    private boolean IsDatabaseEmpty()
     {
         /*selects all rows in the table and returns list
         if list empty table is empty
@@ -41,7 +41,7 @@ public class UWDBController {
        return db.UserWeightBDInterface().getAll().isEmpty();
     }
 
-    void AddFirstWeight(double Weight)
+    private void AddFirstWeight(double Weight)
     {
         UserWeight firstWeight = new UserWeight();
         firstWeight.setPastWeight(Weight);
@@ -50,7 +50,7 @@ public class UWDBController {
         db.UserWeightBDInterface().newWeightRow(firstWeight);
     }
 
-    void AddSecondWeight(double Weight)
+    private void AddSecondWeight(double Weight)
     {
         db.UserWeightBDInterface().updateCurrentWeight(Weight);
     }
