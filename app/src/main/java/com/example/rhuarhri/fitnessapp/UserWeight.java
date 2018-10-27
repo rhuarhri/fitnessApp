@@ -2,10 +2,12 @@ package com.example.rhuarhri.fitnessapp;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class UserWeight {
 
+    @PrimaryKey
     @ColumnInfo(name = "pastWeight")
     double pastWeight;
 

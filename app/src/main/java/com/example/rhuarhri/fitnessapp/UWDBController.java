@@ -15,7 +15,7 @@ public class UWDBController {
 
     UWDBController(Context context)
     {
-        db = Room.databaseBuilder(context, UserWeightDB.class, "").build();
+        db = Room.databaseBuilder(context, UserWeightDB.class, "weightDB").build();
     }
 
     public void addWeight(double Weight)
@@ -33,7 +33,7 @@ public class UWDBController {
 
     }
 
-    private boolean IsDatabaseEmpty()
+    /*private*/ boolean IsDatabaseEmpty()
     {
         /*selects all rows in the table and returns list
         if list empty table is empty
@@ -41,7 +41,7 @@ public class UWDBController {
        return db.UserWeightBDInterface().getAll().isEmpty();
     }
 
-    private void AddFirstWeight(double Weight)
+    /*private*/ void AddFirstWeight(double Weight)
     {
         UserWeight firstWeight = new UserWeight();
         firstWeight.setPastWeight(Weight);
@@ -50,7 +50,7 @@ public class UWDBController {
         db.UserWeightBDInterface().newWeightRow(firstWeight);
     }
 
-    private void AddSecondWeight(double Weight)
+    /*private*/ void AddSecondWeight(double Weight)
     {
         db.UserWeightBDInterface().updateCurrentWeight(Weight);
     }
