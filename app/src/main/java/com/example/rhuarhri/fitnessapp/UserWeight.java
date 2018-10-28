@@ -9,10 +9,10 @@ public class UserWeight {
 
     @PrimaryKey
     @ColumnInfo(name = "pastWeight")
-    double pastWeight;
+    private double pastWeight;
 
     @ColumnInfo(name = "currentWeight")
-    double currentWeight;
+    private double currentWeight;
 
     public double getPastWeight() {
         return pastWeight;

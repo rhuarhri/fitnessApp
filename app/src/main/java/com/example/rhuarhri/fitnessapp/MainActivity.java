@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button startBTN;
     EditText WeightET;
 
-    //UWDBController wdbController;
+    UWDBController wdbController;
 
 
     int test = 0;
@@ -27,7 +26,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //wdbController = new UWDBController(getApplicationContext());
+        try {
+            wdbController = new UWDBController(getApplicationContext());
+        }
+        catch(Exception e)
+        {
+            Toast.makeText(getApplicationContext(), "controller error", Toast.LENGTH_LONG);
+        }
 
         saveBTN = (Button) findViewById(R.id.saveWeightBTN);
         statsBTN = (Button) findViewById(R.id.statsBTN);

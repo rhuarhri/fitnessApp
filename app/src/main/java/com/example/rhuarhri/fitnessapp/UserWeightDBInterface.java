@@ -24,5 +24,8 @@ public interface UserWeightDBInterface {
         @Query("UPDATE UserWeight SET currentWeight = :WeightIn")
         void updateCurrentWeight(double WeightIn);
 
+        @Query ("SELECT Count(*) FROM UserWeight")
+        int getSizeOfTable();
+
 
 }

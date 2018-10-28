@@ -21,7 +21,7 @@ public class UWDBController {
     public void addWeight(double Weight)
     {
         //Step 1 check if table empty
-        if (IsDatabaseEmpty() == true)
+        if (IsTableEmpty() == true)
         {
             //Step 2 add first weight measurement
             AddFirstWeight(Weight);
@@ -33,26 +33,36 @@ public class UWDBController {
 
     }
 
-    /*private*/ boolean IsDatabaseEmpty()
+    private boolean IsTableEmpty()
     {
-        /*selects all rows in the table and returns list
-        if list empty table is empty
+        /*counts all fo the rows on the table
          */
-       return db.UserWeightBDInterface().getAll().isEmpty();
+
+        if (db.UserWeightDBInterface().getSizeOfTable() <= 0)
+        {
+            //nothing in data base
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+
     }
 
-    /*private*/ void AddFirstWeight(double Weight)
+    private void AddFirstWeight(double Weight)
     {
         UserWeight firstWeight = new UserWeight();
         firstWeight.setPastWeight(Weight);
         firstWeight.setCurrentWeight(Weight);
 
-        db.UserWeightBDInterface().newWeightRow(firstWeight);
+        db.UserWeightDBInterface().newWeightRow(firstWeight);
     }
 
-    /*private*/ void AddSecondWeight(double Weight)
+    private void AddSecondWeight(double Weight)
     {
-        db.UserWeightBDInterface().updateCurrentWeight(Weight);
+        db.UserWeightDBInterface().updateCurrentWeight(Weight);
     }
 
 
