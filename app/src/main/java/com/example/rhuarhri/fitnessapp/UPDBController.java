@@ -29,8 +29,7 @@ public class UPDBController {
 
         if (IsTableEmpty() == true)
         {
-            Date defaultDate = new Date();
-            defaultDate = Calendar.getInstance().getTime();
+            Date defaultDate  = Calendar.getInstance().getTime();
 
             UserProgress defaultUP = new UserProgress();
             defaultUP.setType("overall");
@@ -118,11 +117,11 @@ public class UPDBController {
         {
             return "green";
         }
-        else if (effort >= (desiredValue / 2) && effort > desiredValue)
+        else if (effort >= (desiredValue / 2) && effort < desiredValue)
         {
             return "amber";
         }
-        else if(effort > (desiredValue /2))
+        else if(effort < (desiredValue /2))
         {
             return "red";
         }
